@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://5x8vpnfjqhqb"]
+[gd_scene load_steps=5 format=3 uid="uid://5x8vpnfjqhqb"]
 
+[ext_resource type="Script" uid="uid://cvr5kudxjnlku" path="res://ball.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://b7vsaf1ktiy1" path="res://simple-ping-pong-2Dgame-assets/arts/Ball.png" id="1_x8fbi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41u45"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_41u45"]
 radius = 15.1327
 
 [node name="ball" type="RigidBody2D"]
+disable_mode = 2
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_41u45")
+gravity_scale = 0.0
+script = ExtResource("1_41u45")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_x8fbi")
