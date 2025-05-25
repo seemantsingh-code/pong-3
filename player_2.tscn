@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bklfu8mrebj0y"]
+
+[ext_resource type="Script" uid="uid://dp6ov584qutdn" path="res://player_2.gd" id="1_8xjnt"]
+[ext_resource type="Texture2D" uid="uid://cr7548jtjx5s4" path="res://simple-ping-pong-2Dgame-assets/arts/Computer.png" id="2_ufh5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxx23"]
+size = Vector2(20, 126)
+
+[node name="player_2" type="CharacterBody2D"]
+script = ExtResource("1_8xjnt")
+
+[node name="Paddle" type="Sprite2D" parent="."]
+texture = ExtResource("2_ufh5k")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bxx23")

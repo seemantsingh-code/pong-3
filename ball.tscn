@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5x8vpnfjqhqb"]
+
+[ext_resource type="Texture2D" uid="uid://b7vsaf1ktiy1" path="res://simple-ping-pong-2Dgame-assets/arts/Ball.png" id="1_x8fbi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41u45"]
+radius = 15.1327
+
+[node name="ball" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x8fbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_41u45")

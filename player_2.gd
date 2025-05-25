@@ -6,9 +6,9 @@ func _physics_process(delta):
 	# Handle player movement
 	var input_direction = 0
 
-	if Input.is_key_label_pressed(KEY_W):
+	if Input.is_key_label_pressed(KEY_UP):
 		input_direction -= 1
-	if Input.is_key_label_pressed(KEY_S):
+	if Input.is_key_label_pressed(KEY_DOWN):
 		input_direction += 1
 	
 	position.y += input_direction * speed * delta

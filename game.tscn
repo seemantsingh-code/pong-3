@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxj0e5evorta3"]
+[gd_scene load_steps=7 format=3 uid="uid://bxj0e5evorta3"]
 
 [ext_resource type="Texture2D" uid="uid://bgh2q1d6b6k6l" path="res://simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://yu0ho1lleu76" path="res://player_1.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bklfu8mrebj0y" path="res://player_2.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://br383wevkv0wn" path="res://boundry.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dumxb1xpc3ypl" path="res://line_left.tscn" id="5_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bujgi4687wuq6" path="res://line_right.tscn" id="6_eow3j"]
 
 [node name="game" type="Node2D"]
 
@@ -12,3 +16,18 @@ texture = ExtResource("1_80nbo")
 
 [node name="player_1" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(299, 294)
+
+[node name="player_2" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(814, 294)
+
+[node name="boundry_up" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(3, -11)
+
+[node name="boundry_down" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(7, 656)
+
+[node name="line_left" parent="." instance=ExtResource("5_ryrav")]
+position = Vector2(-11, -6)
+
+[node name="line_left2" parent="." instance=ExtResource("6_eow3j")]
+position = Vector2(1162, -10)
