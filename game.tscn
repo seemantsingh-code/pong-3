@@ -29,10 +29,10 @@ position = Vector2(3, -11)
 position = Vector2(7, 656)
 
 [node name="line_left" parent="." instance=ExtResource("5_ryrav")]
-position = Vector2(-11, -6)
+position = Vector2(-24, 0)
 
 [node name="line_right" parent="." instance=ExtResource("6_eow3j")]
-position = Vector2(1162, -5)
+position = Vector2(1184, -8)
 
 [node name="ball" parent="." instance=ExtResource("7_eow3j")]
 position = Vector2(640, 320)

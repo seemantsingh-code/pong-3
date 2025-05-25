@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dysklue2eupg5"]
+
+[ext_resource type="Script" uid="uid://bum035bgt8tb5" path="res://end.gd" id="1_egc6y"]
+[ext_resource type="Script" uid="uid://dp8jjisldkgtj" path="res://restart.gd" id="1_n735c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_egc6y"]
+font_size = 50
+
+[node name="end" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_egc6y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 192.0
+offset_right = 552.0
+offset_bottom = 232.0
+
+[node name="winLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "P1 Won"
+label_settings = SubResource("LabelSettings_egc6y")
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+script = ExtResource("1_n735c")
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_pressed"]

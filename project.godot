@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="pong-3"
-run/main_scene="uid://bxj0e5evorta3"
+run/main_scene="uid://brywka7gs1801"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"

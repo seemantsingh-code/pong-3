@@ -25,5 +25,4 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		
 func _reset_ball():
 	print('reset ball')
-	print(speed)
 	should_reset = true
