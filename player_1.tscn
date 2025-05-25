@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://yu0ho1lleu76"]
+
+[ext_resource type="Texture2D" uid="uid://dri8h6wqgl30q" path="res://simple-ping-pong-2Dgame-assets/arts/Player.png" id="1_squ5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxx23"]
+size = Vector2(20, 126)
+
+[node name="player_1" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_squ5q")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bxx23")
