@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxj0e5evorta3"]
+[gd_scene load_steps=9 format=3 uid="uid://bxj0e5evorta3"]
 
 [ext_resource type="Texture2D" uid="uid://bgh2q1d6b6k6l" path="res://simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://yu0ho1lleu76" path="res://player_1.tscn" id="2_e2o6t"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dumxb1xpc3ypl" path="res://line_left.tscn" id="5_ryrav"]
 [ext_resource type="PackedScene" uid="uid://bujgi4687wuq6" path="res://line_right.tscn" id="6_eow3j"]
 [ext_resource type="PackedScene" uid="uid://5x8vpnfjqhqb" path="res://ball.tscn" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://dglcqe2trtr6m" path="res://coin_spawner.gd" id="8_j5wjh"]
 
 [node name="game" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1143.0
-offset_bottom = 638.0
+offset_bottom = 643.0
 scale = Vector2(1.68, 1.68)
 texture = ExtResource("1_80nbo")
 
@@ -28,7 +29,7 @@ position = Vector2(3.05176e-05, -16)
 scale = Vector2(1.68, 1)
 
 [node name="boundry_down" parent="." instance=ExtResource("4_fc0e3")]
-position = Vector2(8, 1080)
+position = Vector2(8, 1088)
 scale = Vector2(1.68, 1)
 
 [node name="line_left" parent="." instance=ExtResource("5_ryrav")]
@@ -55,3 +56,6 @@ offset_top = 72.0
 offset_right = 776.0
 offset_bottom = 95.0
 text = "0"
+
+[node name="CoinSpawner" type="Node2D" parent="."]
+script = ExtResource("8_j5wjh")
