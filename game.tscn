@@ -11,42 +11,47 @@
 [node name="game" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1154.0
-offset_bottom = 650.0
+offset_right = 1143.0
+offset_bottom = 638.0
+scale = Vector2(1.68, 1.68)
 texture = ExtResource("1_80nbo")
 
 [node name="player_1" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(134, 319)
+position = Vector2(392, 512)
 scale = Vector2(1.00196, 1)
 
 [node name="player_2" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(1016, 320)
+position = Vector2(1616, 496)
 
 [node name="boundry_up" parent="." instance=ExtResource("4_fc0e3")]
-position = Vector2(3, -11)
+position = Vector2(3.05176e-05, -16)
+scale = Vector2(1.68, 1)
 
 [node name="boundry_down" parent="." instance=ExtResource("4_fc0e3")]
-position = Vector2(7, 656)
+position = Vector2(8, 1080)
+scale = Vector2(1.68, 1)
 
 [node name="line_left" parent="." instance=ExtResource("5_ryrav")]
-position = Vector2(-24, 0)
+position = Vector2(-24, 32)
+scale = Vector2(1, 1.6)
 
 [node name="line_right" parent="." instance=ExtResource("6_eow3j")]
-position = Vector2(1184, -8)
+position = Vector2(1976, 0)
+scale = Vector2(1, 1.68)
 
 [node name="ball" parent="." instance=ExtResource("7_eow3j")]
-position = Vector2(640, 320)
+position = Vector2(968, 320)
 
 [node name="p2score" type="Label" parent="."]
-offset_left = 656.0
-offset_top = 32.0
-offset_right = 696.0
-offset_bottom = 55.0
+offset_left = 1176.0
+offset_top = 72.0
+offset_right = 1216.0
+offset_bottom = 95.0
 text = "0"
 
 [node name="p1score" type="Label" parent="."]
-offset_left = 488.0
-offset_top = 32.0
-offset_right = 528.0
-offset_bottom = 55.0
+offset_left = 736.0
+offset_top = 72.0
+offset_right = 776.0
+offset_bottom = 95.0
 text = "0"

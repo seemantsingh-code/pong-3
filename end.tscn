@@ -9,16 +9,16 @@ font_size = 50
 [node name="end" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_egc6y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 192.0
-offset_right = 552.0
-offset_bottom = 232.0
+offset_left = 904.0
+offset_top = 408.0
+offset_right = 1086.0
+offset_bottom = 512.0
 
 [node name="winLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
