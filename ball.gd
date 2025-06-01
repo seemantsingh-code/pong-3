@@ -11,6 +11,7 @@ func _ready() -> void:
 
 	_reset_ball()
 	apply_central_impulse(initial_velocity.normalized() * speed)
+	print('ball by: ', Global.ball_by)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
@@ -22,7 +23,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		next_transform.origin.y = initial_position.y
 		state.set_transform(next_transform)
 		should_reset = false
-		
+	for i in get_colliding_bodies():
+		if i is CharacterBody2D:
+			Global.ball_by = i.name  # or i, if you want the full reference
+			print("Ball last touched by:", i.name)
+
 func _reset_ball():
 	print('reset ball')
 	should_reset = true

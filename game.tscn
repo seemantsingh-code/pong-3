@@ -13,7 +13,7 @@
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1143.0
-offset_bottom = 643.0
+offset_bottom = 648.0
 scale = Vector2(1.68, 1.68)
 texture = ExtResource("1_80nbo")
 
@@ -29,7 +29,7 @@ position = Vector2(3.05176e-05, -16)
 scale = Vector2(1.68, 1)
 
 [node name="boundry_down" parent="." instance=ExtResource("4_fc0e3")]
-position = Vector2(8, 1088)
+position = Vector2(8, 1080)
 scale = Vector2(1.68, 1)
 
 [node name="line_left" parent="." instance=ExtResource("5_ryrav")]
@@ -57,5 +57,19 @@ offset_right = 776.0
 offset_bottom = 95.0
 text = "0"
 
+[node name="p1coins" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 88.0
+offset_right = 136.0
+offset_bottom = 111.0
+text = "0"
+
 [node name="CoinSpawner" type="Node2D" parent="."]
 script = ExtResource("8_j5wjh")
+
+[node name="p2coins" type="Label" parent="."]
+offset_left = 1824.0
+offset_top = 80.0
+offset_right = 1864.0
+offset_bottom = 103.0
+text = "0"

@@ -24,8 +24,8 @@ func spawn_coin():
 	# Set a random position inside the screen bounds
 	var screen_size = get_viewport().size
 	coin.position = Vector2(
-		randf_range(0, screen_size.x),
+		randf_range(400, 1500),
 		randf_range(0, screen_size.y)
 	)
-	
+	print("Spawning coin at: ", coin.position)
 	get_parent().add_child(coin)

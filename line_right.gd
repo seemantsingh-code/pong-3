@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_body_entered(body:Node2D) -> void:
 	ball._reset_ball()
 	score += 1
-	if score > 3:
+	if score > 10:
 		Global.winner = "Player 1"
 		get_tree().change_scene_to_file("res://end.tscn")
 	else:
