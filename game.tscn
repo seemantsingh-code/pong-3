@@ -33,7 +33,7 @@ position = Vector2(8, 1080)
 scale = Vector2(1.68, 1)
 
 [node name="line_left" parent="." instance=ExtResource("5_ryrav")]
-position = Vector2(-24, 32)
+position = Vector2(-32, 8)
 scale = Vector2(1, 1.6)
 
 [node name="line_right" parent="." instance=ExtResource("6_eow3j")]
@@ -73,3 +73,10 @@ offset_top = 80.0
 offset_right = 1864.0
 offset_bottom = 103.0
 text = "0"
+
+[node name="round_label" type="Label" parent="."]
+offset_left = 944.0
+offset_top = 32.0
+offset_right = 1056.0
+offset_bottom = 55.0
+text = "1"

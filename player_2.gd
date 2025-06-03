@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 500
+var speed = 600
 
 func _physics_process(delta):
 	# Handle player movement

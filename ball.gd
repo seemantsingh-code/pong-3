@@ -1,7 +1,10 @@
 extends RigidBody2D
 
 var initial_velocity = Vector2(-300, 100)
-var speed = 600
+var speed_dict = {
+	"round_1": 800,
+	"round_2": 1000
+}
 var initial_position = Vector2(640, 320)
 var should_reset = false
 
@@ -10,12 +13,12 @@ var should_reset = false
 func _ready() -> void:
 
 	_reset_ball()
-	apply_central_impulse(initial_velocity.normalized() * speed)
+	apply_central_impulse(initial_velocity.normalized() * speed_dict["round_" + str(Global.round_number)])
 	print('ball by: ', Global.ball_by)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
-	state.linear_velocity = linear_velocity.normalized() * speed
+	state.linear_velocity = linear_velocity.normalized() * speed_dict["round_" + str(Global.round_number)]
 
 	if should_reset:
 		var next_transform = state.get_transform()
