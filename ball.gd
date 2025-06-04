@@ -3,7 +3,8 @@ extends RigidBody2D
 var initial_velocity = Vector2(-300, 100)
 var speed_dict = {
 	"round_1": 800,
-	"round_2": 1000
+	"round_2": 1000,
+	"round_3": 1200,
 }
 var initial_position = Vector2(640, 320)
 var should_reset = false
