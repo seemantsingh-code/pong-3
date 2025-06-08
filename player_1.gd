@@ -10,7 +10,10 @@ func _physics_process(delta):
 		input_direction -= 1
 	if Input.is_key_label_pressed(KEY_S):
 		input_direction += 1
-	
+	if Input.is_key_label_pressed(KEY_A):
+		rotation -= .1
+	if Input.is_key_label_pressed(KEY_D):
+		rotation += .1
 	position.y += input_direction * speed * delta
 
 	var viewport_height = get_viewport_rect().size.y
