@@ -20,7 +20,7 @@ func _on_body_entered(body:Node2D) -> void:
 			score = 0
 			get_node("../p2score").text = str(0)
 			get_node("../round_label").text = "Round: " + str(Global.round_number)
-			print(Global.level_winner)
+			get_tree().change_scene_to_file("res://shop.tscn")
 		else:
 			Global.level_winner[str(Global.round_number)] = "Player 2"
 			Global.winner = get_match_winner(Global.level_winner)
