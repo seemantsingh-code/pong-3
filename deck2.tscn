@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8vbq0odokxk1"]
+
+[ext_resource type="Texture2D" uid="uid://cb5uomqbtrhxf" path="res://simple-ping-pong-2Dgame-assets/make-small.png" id="1_gwh6h"]
+[ext_resource type="Texture2D" uid="uid://boch1e6my1c6x" path="res://simple-ping-pong-2Dgame-assets/pull-ball.png" id="2_8i6mr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_gwh6h")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_8i6mr")
