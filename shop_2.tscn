@@ -46,6 +46,8 @@ texture = ExtResource("2_1qvy3")
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer2/Button")
+focus_neighbor_right = NodePath("../../VBoxContainer2/Button")
 text = "Buy"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
@@ -57,6 +59,8 @@ texture = ExtResource("3_ufonj")
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/Button")
+focus_neighbor_right = NodePath("../../VBoxContainer/Button")
 text = "Buy"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
