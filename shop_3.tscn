@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqpmo61g1li5"]
+
+[ext_resource type="Script" uid="uid://bvjwfcycsi2lr" path="res://shop_3.gd" id="1_oymx2"]
+[ext_resource type="Texture2D" uid="uid://cl8cnwco0b4mk" path="res://simple-ping-pong-2Dgame-assets/storebg.png" id="2_tovdu"]
+
+[node name="shop3" type="Node2D"]
+script = ExtResource("1_oymx2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 1921.0
+offset_bottom = 1080.0
+texture = ExtResource("2_tovdu")
+
+[node name="shop_p1" type="HBoxContainer" parent="."]
+offset_left = 192.0
+offset_top = 320.0
+offset_right = 768.0
+offset_bottom = 768.0
+
+[node name="shop_p2" type="HBoxContainer" parent="."]
+offset_left = 1152.0
+offset_top = 320.0
+offset_right = 1728.0
+offset_bottom = 760.0
