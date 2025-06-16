@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_body_entered(body:Node2D) -> void:
 	ball._reset_ball()
 	score += 1
-	if score > 5:
+	if score > 2:
 		if Global.round_number < 3:
 			print("Round: " + str(Global.round_number))
 			Global.level_winner[str(Global.round_number)] = "Player 1"
@@ -21,7 +21,7 @@ func _on_body_entered(body:Node2D) -> void:
 			score = 0
 			get_node("../p1score").text = str(0)
 			get_node("../round_label").text = "Round: " + str(Global.round_number)
-			get_tree().change_scene_to_file("res://shop.tscn")
+			get_tree().change_scene_to_file("res://shop_3.tscn")
 		else:
 			Global.level_winner[str(Global.round_number)] = "Player 1"
 			Global.winner = get_match_winner(Global.level_winner)

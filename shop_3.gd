@@ -1,11 +1,6 @@
 extends Node2D
 
-const power_dict = {
-	'enlarge': ['res://simple-ping-pong-2Dgame-assets/go-big.png'],
-	'fasten': ['res://simple-ping-pong-2Dgame-assets/go-fast.png'],
-	'make-small': ['res://simple-ping-pong-2Dgame-assets/make-small.png'],
-	'pull-ball': ['res://simple-ping-pong-2Dgame-assets/pull-ball.png'],
-}
+const power_dict = Global.power_dict
 
 # Player 1 Controls
 const P1_LEFT = "ui_p1_left"
@@ -22,6 +17,9 @@ var p2_powerups = []
 
 var p1_index = 0
 var p2_index = 0
+
+var p1_ready = false
+var p2_ready = false
 
 func _ready():
 	var p1_powerups = []
@@ -68,9 +66,16 @@ func _process(delta: float) -> void:
 		self.p1_index = (self.p1_index + 1) % 3
 		$shop_p1.get_child(self.p1_index).grab_focus()
 	elif Input.is_action_just_pressed(P1_BUY):
-		var selected_powerup = $shop_p1.get_child(self.p1_index).name
-		p1_powerups.append(selected_powerup)
-		print("Player 1 bought: ", p1_powerups)
+		if $shop_p1.get_child(self.p1_index).name == "play1":
+			p1_ready = true
+		else:
+			var selected_powerup = $shop_p1.get_child(self.p1_index).name
+			if selected_powerup in p1_powerups:
+				print("Player 1 already has this powerup: ", selected_powerup)
+			else:
+				# Add the selected powerup to the player's list
+				p1_powerups.append(selected_powerup)
+				print("Player 1 bought: ", p1_powerups)
 
 	
 
@@ -82,6 +87,19 @@ func _process(delta: float) -> void:
 		self.p2_index = (self.p2_index + 1) % 3
 		$shop_p2.get_child(self.p2_index).grab_focus()
 	elif Input.is_action_just_pressed(P2_BUY):
-		var selected_powerup = $shop_p2.get_child(self.p2_index).name
-		p2_powerups.append(selected_powerup)
-		print("Player 2 bought: ", p2_powerups)
+		if $shop_p2.get_child(self.p2_index).name == "play2":
+			p2_ready = true
+		else:
+			var selected_powerup = $shop_p2.get_child(self.p2_index).name
+			if selected_powerup in p2_powerups:
+				print("Player 2 already has this powerup: ", selected_powerup)
+			else:
+				# Add the selected powerup to the player's list
+				p2_powerups.append(selected_powerup)
+				print("Player 2 bought: ", p2_powerups)
+	if p1_ready and p2_ready:
+		Global.p1_powerups = p1_powerups
+		Global.p2_powerups = p2_powerups
+		print("Player 1 Powerups: ", Global.p1_powerups)
+		print("Player 2 Powerups: ", Global.p2_powerups)
+		get_tree().change_scene_to_file("res://game.tscn")

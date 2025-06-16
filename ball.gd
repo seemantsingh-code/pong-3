@@ -44,7 +44,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	for i in get_colliding_bodies():
 		if i is CharacterBody2D:
 			Global.ball_by = i.name  # or i, if you want the full reference
-			print("Ball last touched by:", i.name)
 
 func _reset_ball():
 	print('reset ball')
