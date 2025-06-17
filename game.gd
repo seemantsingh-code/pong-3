@@ -10,6 +10,8 @@ const p2_deck_right = 'deck_right_2'
 
 var p2_deck_index = 0
 
+var card_selector_p1: TextureRect
+var card_selector_p2: TextureRect
 
 func _ready() -> void:
 	# Initialize the game state or any necessary variables here
@@ -42,30 +44,44 @@ func _ready() -> void:
 		# texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		vbox_p2.add_child(texture_rect)
 		print("Added powerup: ", powerup, " to Player 2's powerups.")
+	
+	if $p1_powerups.get_child_count() > 0:
+		card_selector_p1 = TextureRect.new()
+		card_selector_p1.texture = load("res://simple-ping-pong-2Dgame-assets/card_selector.png")
+		card_selector_p1.name = "card_selector"
+		card_selector_p1.size = $p1_powerups.get_child(0).size
+		card_selector_p1.visible = false
+		add_child(card_selector_p1)
+
+	if $p2_powerups.get_child_count() > 0:
+		card_selector_p2 = TextureRect.new()
+		card_selector_p2.texture = load("res://simple-ping-pong-2Dgame-assets/card_selector.png")
+		card_selector_p2.name = "card_selector_2"
+		card_selector_p2.size = $p2_powerups.get_child(0).size
+		card_selector_p2.visible = false
+		add_child(card_selector_p2)
 
 func _process(delta: float) -> void:
 	if $p1_powerups.get_child_count() > 0:
-		var texture_rect_card_selector = TextureRect.new()
-		texture_rect_card_selector.texture = load("res://simple-ping-pong-2Dgame-assets/card_selector.png")
-		texture_rect_card_selector.name = "card_selector"
-		texture_rect_card_selector.visible = true
-		texture_rect_card_selector.global_position  = $p1_powerups.get_child(p1_deck_index).get_global_position()
 		if Input.is_action_just_pressed(p1_deck_left):
-			p1_deck_index = p1_deck_index - 1  % $p1_powerups.get_child_count()
-			texture_rect_card_selector.global_position  = $p1_powerups.get_child(p1_deck_index).get_global_position()
+			p1_deck_index = (p1_deck_index - 1) % $p1_powerups.get_child_count()
+			print("P1 Deck Index: ", p1_deck_index)
+			card_selector_p1.global_position  = $p1_powerups.get_child(p1_deck_index).get_global_position()
+			card_selector_p1.visible = true
 
 		if Input.is_action_just_pressed(p1_deck_right):
-			p1_deck_index = p1_deck_index + 1 % $p1_powerups.get_child_count()
-			texture_rect_card_selector.global_position  = $p1_powerups.get_child(p1_deck_index).get_global_position()
+			p1_deck_index = (p1_deck_index + 1) % $p1_powerups.get_child_count()
+			print("P1 Deck Index: ", p1_deck_index)
+			card_selector_p1.global_position  = $p1_powerups.get_child(p1_deck_index).get_global_position()
+			card_selector_p1.visible = true
 	if $p2_powerups.get_child_count() > 0:
-		var texture_rect_card_selector_2 = TextureRect.new()
-		texture_rect_card_selector_2.texture = load("res://simple-ping-pong-2Dgame-assets/card_selector.png")
-		texture_rect_card_selector_2.name = "card_selector_2"
-		texture_rect_card_selector_2.visible = true
-		texture_rect_card_selector_2.global_position  = $p2_powerups.get_child(p2_deck_index).get_global_position()
 		if Input.is_action_just_pressed(p2_deck_left):
-			p2_deck_index = p2_deck_index - 1  % $p2_powerups.get_child_count()
-			texture_rect_card_selector_2.global_position  = $p2_powerups.get_child(p2_deck_index).get_global_position()
+			p2_deck_index = (p2_deck_index - 1) % $p2_powerups.get_child_count()
+			print("P2 Deck Index: ", p2_deck_index)
+			card_selector_p2.global_position  = $p2_powerups.get_child(p2_deck_index).get_global_position()
+			card_selector_p2.visible = true
 		if Input.is_action_just_pressed(p2_deck_right):
-			p2_deck_index = p2_deck_index + 1 % $p2_powerups.get_child_count()
-			texture_rect_card_selector_2.global_position  = $p2_powerups.get_child(p2_deck_index).get_global_position()
+			p2_deck_index = (p2_deck_index + 1) % $p2_powerups.get_child_count()
+			print("P2 Deck Index: ", p2_deck_index)
+			card_selector_p2.global_position  = $p2_powerups.get_child(p2_deck_index).get_global_position()
+			card_selector_p2.visible = true
