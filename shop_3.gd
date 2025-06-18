@@ -73,9 +73,12 @@ func _process(delta: float) -> void:
 			if selected_powerup in p1_powerups:
 				print("Player 1 already has this powerup: ", selected_powerup)
 			else:
-				# Add the selected powerup to the player's list
-				p1_powerups.append(selected_powerup)
-				print("Player 1 bought: ", p1_powerups)
+				if Global.coin_p1 < power_dict[selected_powerup][1]:
+					print("Player 1 does not have enough coins for this powerup: ", selected_powerup)
+				else:
+					Global.coin_p1 -= power_dict[selected_powerup][1]
+					p1_powerups.append(selected_powerup)
+					print("Player 1 bought: ", p1_powerups)
 
 	
 
@@ -95,8 +98,12 @@ func _process(delta: float) -> void:
 				print("Player 2 already has this powerup: ", selected_powerup)
 			else:
 				# Add the selected powerup to the player's list
-				p2_powerups.append(selected_powerup)
-				print("Player 2 bought: ", p2_powerups)
+				if Global.coin_p2 < power_dict[selected_powerup][1]:
+					print("Player 2 does not have enough coins for this powerup: ", selected_powerup)
+				else:
+					Global.coin_p2 -= power_dict[selected_powerup][1]
+					p2_powerups.append(selected_powerup)
+					print("Player 2 bought: ", p2_powerups)
 	if p1_ready and p2_ready:
 		Global.p1_powerups = p1_powerups
 		Global.p2_powerups = p2_powerups

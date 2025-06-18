@@ -15,8 +15,6 @@ func _on_body_entered(body:Node2D) -> void:
 			print("Round: " + str(Global.round_number))
 			Global.level_winner[str(Global.round_number)] = "Player 1"
 			Global.round_number += 1
-			Global.coin_p1 = 0
-			Global.coin_p2 = 0
 			Global.ball_by = ""
 			score = 0
 			get_node("../p1score").text = str(0)

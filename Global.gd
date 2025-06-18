@@ -10,10 +10,10 @@ var ball_by = ""
 var level_winner = {"1":"", "2":"", "3":""}
 
 const power_dict = {
-	'enlarge': ['res://simple-ping-pong-2Dgame-assets/go-big.png'],
-	'fasten': ['res://simple-ping-pong-2Dgame-assets/go-fast.png'],
-	'make-small': ['res://simple-ping-pong-2Dgame-assets/make-small.png'],
-	'pull-ball': ['res://simple-ping-pong-2Dgame-assets/pull-ball.png'],
+	'enlarge': ['res://simple-ping-pong-2Dgame-assets/go-big.png', 1],
+	'fasten': ['res://simple-ping-pong-2Dgame-assets/go-fast.png', 1],
+	'make-small': ['res://simple-ping-pong-2Dgame-assets/make-small.png', 1],
+	'pull-ball': ['res://simple-ping-pong-2Dgame-assets/pull-ball.png', 1],
 }
 
 var p1_powerups = []
