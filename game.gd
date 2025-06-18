@@ -78,10 +78,10 @@ func _process(delta: float) -> void:
 			card_selector_p1.global_position  = $p1_powerups.get_child(p1_deck_index).get_global_position()
 			card_selector_p1.visible = true
 
-		if Input.is_action_just_pressed(p1_use_card) and not Global.ball_on_paddle:
+		if Input.is_action_just_pressed(p1_use_card):
 			var selected_powerup = $p1_powerups.get_child(p1_deck_index)
 			print("P1 using powerup: ", selected_powerup.name)
-			Global._power_activate(selected_powerup.name, 1)  # Activate the powerup for Player 1
+			Global._power_activate(selected_powerup.name, $player_1, $player_2)  # Activate the powerup for Player 1
 			selected_powerup.queue_free()  # Example: remove the powerup after use
 			card_selector_p1.visible = false
 		
@@ -96,9 +96,9 @@ func _process(delta: float) -> void:
 			print("P2 Deck Index: ", p2_deck_index)
 			card_selector_p2.global_position  = $p2_powerups.get_child(p2_deck_index).get_global_position()
 			card_selector_p2.visible = true
-		if Input.is_action_just_pressed(p2_use_card) and not Global.ball_on_paddle:
+		if Input.is_action_just_pressed(p2_use_card):
 			var selected_powerup = $p2_powerups.get_child(p2_deck_index)
 			print("P2 using powerup: ", selected_powerup.name)
-			Global._power_activate(selected_powerup.name, 2)  # Activate the powerup for Player 2
+			Global._power_activate(selected_powerup.name, $player_2, $player_1)  # Activate the powerup for Player 2
 			selected_powerup.queue_free()  # Example: remove the powerup after use
 			card_selector_p2.visible = false
