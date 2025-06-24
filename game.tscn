@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxj0e5evorta3"]
 
-[ext_resource type="Texture2D" uid="uid://bgh2q1d6b6k6l" path="res://simple-ping-pong-2Dgame-assets/arts/Board.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://6qd7rfbaq76x" path="res://game.gd" id="1_vef74"]
 [ext_resource type="PackedScene" uid="uid://yu0ho1lleu76" path="res://player_1.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://dh0gellqomgm8" path="res://simple-ping-pong-2Dgame-assets/aseprite/background.png" id="2_vef74"]
 [ext_resource type="PackedScene" uid="uid://bklfu8mrebj0y" path="res://player_2.tscn" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://br383wevkv0wn" path="res://boundry.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dumxb1xpc3ypl" path="res://line_left.tscn" id="5_ryrav"]
@@ -14,10 +14,10 @@
 script = ExtResource("1_vef74")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1143.0
-offset_bottom = 648.0
-scale = Vector2(1.68, 1.68)
-texture = ExtResource("1_80nbo")
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.999999, 1)
+texture = ExtResource("2_vef74")
 
 [node name="player_1" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(392, 512)

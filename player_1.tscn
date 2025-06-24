@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://yu0ho1lleu76"]
 
 [ext_resource type="Script" uid="uid://d755qea5eeqb" path="res://player_1.gd" id="1_bxx23"]
-[ext_resource type="Texture2D" uid="uid://dri8h6wqgl30q" path="res://simple-ping-pong-2Dgame-assets/arts/Player.png" id="1_squ5q"]
+[ext_resource type="Texture2D" uid="uid://uotcdjxu7nde" path="res://simple-ping-pong-2Dgame-assets/aseprite/player1.png" id="2_bxx23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxx23"]
-size = Vector2(20, 126)
+size = Vector2(20, 100)
 
 [node name="player_1" type="CharacterBody2D"]
 script = ExtResource("1_bxx23")
 
 [node name="Paddle" type="Sprite2D" parent="."]
-texture = ExtResource("1_squ5q")
+texture = ExtResource("2_bxx23")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
