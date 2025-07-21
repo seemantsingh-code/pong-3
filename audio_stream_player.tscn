@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://do60m3gfj8s4b"]
+
+[ext_resource type="AudioStream" uid="uid://d0j2utkeie3f6" path="res://pong-bg.wav" id="1_g84o6"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_g84o6")
